@@ -6,7 +6,7 @@ int main(){
 	char estado;
 	char carta[4];
 	char cidade[50];
-	float populacao;
+	unsigned long int populacao;
 	float area;
 	float pib;
 	int turistico;
@@ -17,7 +17,7 @@ int main(){
 	char estado1;
 	char carta1[4];
 	char cidade1[50];
-	float populacao1;
+	unsigned long int populacao1;
 	float area1;
 	float pib1;
 	int turistico1;
@@ -103,5 +103,20 @@ int main(){
 	printf("PIB per capita: %e \n", pib_capita1);
 	printf("=========================================\n");
 	
+	// Calculo dos "Super poderes"
+	float super_poder1 = (float)populacao + area + pib + turistico + pib_capita + (1.0 / densidade_populacional);
+    float super_poder2 = (float)populacao1 + area1 + pib1 + turistico1 + pib_capita1 + (1.0 / densidade_populacional1);
+
+    // Comparações
+    printf("\nComparação de Cartas:\n");
+    printf("População: Carta 1 venceu (%d)\n", populacao > populacao1);
+    printf("Área: Carta 1 venceu (%d)\n", area > area1);
+    printf("PIB: Carta 1 venceu (%d)\n", pib > pib1);
+    printf("Pontos Turísticos: Carta 1 venceu (%d)\n", turistico > turistico1);
+    printf("Densidade Populacional: Carta 1 venceu (%d)\n", densidade_populacional < densidade_populacional1);
+    printf("PIB per Capita: Carta 1 venceu (%d)\n", pib_capita > pib_capita1);
+    printf("Super Poder: Carta 1 venceu (%d)\n", super_poder1 > super_poder2);
+
+
 	return 0;
 }
